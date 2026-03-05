@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import Image from "next/image"
 import { Menu, X, Phone } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
@@ -14,8 +15,16 @@ const navLinks = [
 ]
 
 export default function Header() {
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
+
+  function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    if (pathname === href) {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -75,6 +84,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
                 isScrolled ? "text-secondary" : "text-white"
               }`}
@@ -139,7 +149,7 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  onClick={() => setIsMobileOpen(false)}
+                  onClick={(e) => { handleNavClick(e, link.href); setIsMobileOpen(false) }}
                   className="text-2xl font-heading font-bold text-secondary hover:text-primary transition-colors"
                 >
                   {link.label}

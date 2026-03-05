@@ -52,7 +52,7 @@ export default function Footer() {
               href="https://www.facebook.com/p/SP-Nettoyages-61561349994384/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-primary hover:translate-x-1 transition-all duration-200 text-sm"
             >
               <Facebook className="w-5 h-5" />
               Suivez-moi sur Facebook
@@ -69,7 +69,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                    className="text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200"
                   >
                     {s.label}
                   </Link>
@@ -88,7 +88,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                    className="text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200"
                   >
                     {l.label}
                   </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+33674338786"
-                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200"
                 >
                   <Phone className="w-4 h-4 text-primary shrink-0" />
                   06 74 33 87 86
@@ -115,7 +115,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:spnettoyages04@gmail.com"
-                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200"
                 >
                   <Mail className="w-4 h-4 text-primary shrink-0" />
                   spnettoyages04@gmail.com
